@@ -18,34 +18,24 @@
  */
 return array(
     // 有变化才发送通知（辅种成功 + 失败 > 0）
-    'notify_on_change' => false,
+    'notify_on_change' => true,
     // 1.【必须配置】爱语飞飞 微信通知，请访问https://iyuu.cn 用微信扫码申请
-    'iyuu.cn'		=> 'IYUU',
+    'iyuu.cn'		=> 'IYUU1892T0dbd5a9eb5dcc0b0aec24d57d6dc09d498c1f817',
     // 2.全局默认配置
     'default'      => array(
         // 3.【必须配置】浏览器UA，打开http://demo.iyuu.cn 复制过来即可
-        'userAgent'     => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.1303.189 Safari/537.36',
+        'userAgent'     => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
         // 4.【自动辅种必须配置】全局客户端设置（条目不够可以复制）
         'clients'   => array(
             // 全局客户端设置 开始
             # 开始
             array(
-                'type'	=>	'transmission',	// 支持：transmission、qBittorrent
-                'host'	=>	'http://127.0.0.1:9091/transmission/rpc',		// 警告！注意：transmission/rpc这段别动，你只需要修改 127.0.0.1:9091
-                'username'	=>	'',
-                'password'	=>	'',
-                'BT_backup' =>  '/var/lib/transmission/torrents',                        // 移动做种：如果脚本与当前客户端不在一台机器，必须配置
-                'move'      =>  0,      // 0不移动，1移动并辅种，2移动且只在当前客户端辅种
-            ),
-            # 结束
-            # 开始
-            array(
                 'type'	=>	'qBittorrent',	// 支持：transmission、qBittorrent
-                'host'	=>	'http://127.0.0.1:8083',
-                'username'	=>	'',
-                'password'	=>	'',
+                'host'	=>	'http://10.0.0.2:8080',
+                'username'	=>	'admin',
+                'password'	=>	'cfc4d0a5',
                 'root_folder'=> 1,   // 0不创建根目录，1创建根目录
-                'BT_backup' =>  'C:\Users\ASUS\AppData\Local\qBittorrent\BT_backup',    // 移动做种：必须配置，Linux搜索方法：find / -name BT_backup
+                'BT_backup' =>  '/mnt/nas/pt',    // 移动做种：必须配置，Linux搜索方法：find / -name BT_backup
                 'move'      =>  0,      // 0不移动，1移动并辅种，2移动且只在当前客户端辅种
             ),
             # 结束
@@ -167,8 +157,8 @@ return array(
         // 如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
         'cookie'        => '',
         // 如果需要自动辅种，必须配置
-        'passkey'       => '',
-        'id' => 0,					// 用户ID(不是用户名)
+        'passkey'       => '609a48471d20474f3913bbe4612f5252',
+        'id' => 62651,					// 用户ID(不是用户名)
         'url_replace' => array(),
         'url_join' => array(
             //'ipv6=1',   // 种子Tracker的IP地址选择 可选：ipv4，ipv6
@@ -184,28 +174,11 @@ return array(
         // 14.m-team的cookie	如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
         'cookie'        => 'tp=',
         // 15.m-team的passkey	【必须配置】
-        'passkey'       => '',
+        'passkey'       => '329bee09c79c2e34cfa50b95ccda7406',
         'url_replace' => array(),
         'url_join' => array(
             //'ipv6=1',   // 种子Tracker的IP地址选择 可选：ipv4，ipv6
             'https=1',
-        ),
-        'clients'   => array(
-            array(
-                'type'	=>	'transmission',	// 支持：transmission、qBittorrent
-                'host'	=>	'http://127.0.0.1:9091/transmission/rpc',		// 警告！注意：transmission/rpc这段别动，你只需要修改 127.0.0.1:9091
-                'username'	=>	'',
-                'password'	=>	'',
-                'downloadDir'=> '',
-            ),
-        ),
-        'workingMode'	=> 1,
-        'watch'         => '',
-        'filter' => array(
-            'size'=>array(
-                'min'	=>	'1GB',
-                'max'	=>	'280GB',
-            ),
         ),
     ),
     // keepfrds
@@ -279,7 +252,7 @@ return array(
         // 如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
         'cookie'        => '',
         // 如果需要自动辅种，必须配置
-        'passkey'       => '',
+        'passkey'       => 'edeb605890f43c1924260f18920c6114',
         'url_replace' => array(),
         'url_join' => array(),
     ),
@@ -393,7 +366,7 @@ return array(
         // 如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
         'cookie'        => '',
         // 如果需要自动辅种，必须配置
-        'passkey'       => '',
+        'passkey'       => '3d7d484ed077582ffe4d91eab7b43828',
         'url_replace' => array(),
         'url_join' => array(),
     ),
@@ -402,7 +375,7 @@ return array(
         // 如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
         'cookie'        => '',
         // 如果需要自动辅种，必须配置
-        'passkey'       => '',
+        'passkey'       => '44556aa4ae915f0e97b610cfe3a8e12a',
         'url_replace' => array(),
         'url_join' => array(),
     ),
@@ -638,7 +611,7 @@ return array(
         // 如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
         'cookie'        => '',
         // 如果需要自动辅种，必须配置
-        'passkey'       => '',
+        'passkey'       => 'b6d88593ef8718c17db41b8d25de61c7',
         'url_replace' => array(),
         'url_join' => array(),
     ),
@@ -647,7 +620,7 @@ return array(
         // 如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
         'cookie'        => '',
         // 如果需要自动辅种，必须配置
-        'passkey'       => '',
+        'passkey'       => 'f68808f0a860ecdd80bab4e5f8542e4a',
         'url_replace' => array(),
         'url_join' => array(),
     ),
