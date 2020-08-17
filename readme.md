@@ -12,7 +12,7 @@
 
 ![stars](https://img.shields.io/github/stars/ledccn/IYUUAutoReseed)![forks](https://img.shields.io/github/forks/ledccn/IYUUAutoReseed)![release](https://img.shields.io/github/release/ledccn/IYUUAutoReseed.svg)
 
-## 获取脚本，三种方式皆可
+## 获取脚本，四种方式皆可
 
 1. 通过git命令安装
 
@@ -25,6 +25,10 @@
 3. 直接下载zip源码包
 
     `https://github.com/ledccn/IYUUAutoReseed/archive/master.zip`
+    
+4. Docker使用
+
+     [https://gitee.com/ledc/IYUUAutoReseed/tree/master/docker](https://gitee.com/ledc/IYUUAutoReseed/tree/master/docker)
 
 ## 功能
 
@@ -51,7 +55,7 @@ IYUU自动辅种工具（英文名：IYUUAutoReseed），是一款PHP语言编�
  2. qBittorrent
 
 ## 支持自动辅种的站点
-学校、杜比、家园、天空、朋友、馒头、萌猫、我堡、猫站、铂金家、烧包、北洋、TCCF、南洋、TTG、映客、城市、52pt、brobits、备胎、SSD、CHD、ptmsg、leaguehd、聆音、瓷器、hdarea、eastgame(TLF)、1ptba、hdtime、hd4fans、opencd、hdbug、hdstreet、joyhd、u2、upxin(HDU)、oshen、discfan(GZT)、cnscg圣城(已删除)、北邮、CCFBits、dicmusic、天雪、葡萄、HDRoute、伊甸园hdbd、海胆haidan、HDfans。
+学校、杜比、家园、天空、朋友、馒头、萌猫、我堡、猫站、铂金家、烧包、北洋、TCCF、南洋、TTG、映客、城市、52pt、brobits、备胎、SSD、CHD、ptmsg、leaguehd、聆音、瓷器、hdarea、eastgame(TLF)、1ptba、hdtime、hd4fans、opencd、hdbug、hdstreet、joyhd、u2、upxin(HDU)、oshen、discfan(GZT)、cnscg圣城(已删除)、北邮、CCFBits、dicmusic、天雪、葡萄、HDRoute、伊甸园hdbd、海胆haidan、HDfans、龙之家。
 
 ## 运行环境
 具备PHP运行环境的所有平台，例如：Linux、Windows、MacOS！
@@ -77,10 +81,15 @@ IYUU自动辅种工具（英文名：IYUUAutoReseed），是一款PHP语言编�
 
 ## 相关项目
 
-- IYUU GUI，地址：https://github.com/Rhilip/IYUU-GUI；简介：这是一个基于IYUU提供的API，产生的一个可视化操作项目。 目的是为了降低直接上手PHP版IYUUAutoReseed的难度。
-- IYUU-Fly，地址：https://github.com/PlexPt/iyuu-fly；简介：带GUI的iyuu自动辅种程序。
-- goreseed，地址：https://github.com/gaoluhua99/goreseed；简介：golang编写调用IYUU接口的CLI辅种程序。
-- IYUUAutoReseed-web，地址：https://github.com/goveeta/IYUUAutoReseed-web
+
+| 项目名| 简介|
+| - | --- |
+| [IYUU GUI](https://github.com/Rhilip/IYUU-GUI) | 这是一个基于IYUU提供的API，产生一个可视化操作项目。目的是为了降低直接上手PHP版IYUUAutoReseed的困难。 |
+| [IYUU-Fly](https://github.com/PlexPt/iyuu-fly) | 带GUI的iyuu自动辅种程序。 |
+| [goreseed](https://github.com/gaoluhua99/goreseed) | golang编写调用IYUU接口的CLI辅种程序。 |
+| [IYUUAutoReseed-web](https://github.com/goveeta/IYUUAutoReseed-web) |   |
+| [AutoPT](https://github.com/lyssssssss/AutoPT) | 此程序用于自动下载PT免费种子，并自动辅种和一体化管理。开发目的为了释放双手，专注观影！  |
+| [flexget_qbittorrent_mod](https://github.com/IvonWei/flexget_qbittorrent_mod) | Flexget qBittorrent插件，实现全自动化辅种，删除种，免费种筛选，签到等。|
 
 
 ## 需求提交/错误反馈

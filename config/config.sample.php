@@ -7,6 +7,7 @@
  * IYUU自动辅种工具-【安装篇】Windows之git https://www.iyuu.cn/archives/367/
  * IYUU自动辅种工具-【安装篇】群晖Linux之git https://www.iyuu.cn/archives/372/
  * IYUU自动辅种工具-【安装篇】小钢炮手把手教程 https://www.iyuu.cn/archives/386/
+ * IYUU自动辅种工具-【安装篇】全平台Docker安装方式 https://www.iyuu.cn/archives/401/
  * IYUU自动辅种工具--最简配置（所有平台通用教程） https://www.iyuu.cn/archives/324/
  * IYUU自动辅种工具--合作站点鉴权配置说明 https://www.iyuu.cn/archives/337/
  * IYUU自动下载种子--之RSS订阅使用教程 https://www.iyuu.cn/archives/349/
@@ -32,9 +33,9 @@ return array(
             array(
                 'type'	=>	'transmission',	// 支持：transmission、qBittorrent
                 'host'	=>	'http://127.0.0.1:9091/transmission/rpc',		// 警告！注意：transmission/rpc这段别动，你只需要修改 127.0.0.1:9091
-                'username'	=>	'null',
-                'password'	=>	'null',
-                'BT_backup' =>  '/var/lib/transmission/torrents',                        // 移动做种：如果脚本与当前客户端不在一台机器，必须配置
+                'username'	=>	'',     // 没有用户名请填写null
+                'password'	=>	'',     // 没有密码  请填写null
+                'BT_backup' =>  '/torrents',                        // 移动做种：如果脚本与当前客户端不在一台机器，必须配置
                 'move'      =>  0,      // 0不移动，1移动并辅种，2移动且只在当前客户端辅种
             ),
             # 结束
@@ -44,8 +45,8 @@ return array(
                 'host'	=>	'http://127.0.0.1:8083',
                 'username'	=>	'admin',
                 'password'	=>	'',
-                'root_folder'=> 1,   // 0不创建根目录，1创建根目录
-                'BT_backup' =>  'C:\Users\ASUS\AppData\Local\qBittorrent\BT_backup',    // 移动做种：必须配置，Linux搜索方法：find / -name BT_backup
+                'root_folder'=> 1,   // 0不创建根目录，1创建根目录(下载器默认1)
+                'BT_backup' =>  '/BT_backup',    // 移动做种：必须配置，Linux搜索方法：find / -name BT_backup
                 'move'      =>  0,      // 0不移动，1移动并辅种，2移动且只在当前客户端辅种
             ),
             # 结束
@@ -60,14 +61,14 @@ return array(
             ),
             'path_filter'=> array(),          //转移过滤器：不转移此路径内文件
             'path_selector' => array(),       //转移选择器：只转移此路径内文件(为空时，全转移)    【优先级：过滤器 ＞ 选择器】
-            'paused'         => 0,      //转移成功，自动开始任务：0开始，1暂停
+            'paused'         => 1,      //转移成功，自动开始任务：0开始，1暂停
             'skip_check'     => 0,      //转移成功，跳校验：0不跳、1跳校验
             'delete_torrent' => 0,      //转移成功，删除当前做种：0不删除、1删除
         ),
         // 6.RSS工作模式
         'workingMode'	=> 0,
         // 7.监控目录
-        'watch'         => '/volume1/downloads',
+        'watch'         => '/volume1/watch',
         // 8.RSS过滤参数配置
         'filter' => array(
             'size'=>array(
@@ -194,23 +195,6 @@ return array(
             //'ipv6=1',   // 种子Tracker的IP地址选择 可选：ipv4，ipv6
             'https=1',
         ),
-        'clients'   => array(
-            array(
-                'type'	=>	'transmission',	// 支持：transmission、qBittorrent
-                'host'	=>	'http://127.0.0.1:9091/transmission/rpc',		// 警告！注意：transmission/rpc这段别动，你只需要修改 127.0.0.1:9091
-                'username'	=>	'',
-                'password'	=>	'',
-                'downloadDir'=> '',
-            ),
-        ),
-        'workingMode'	=> 1,
-        'watch'         => '',
-        'filter' => array(
-            'size'=>array(
-                'min'	=>	'1GB',
-                'max'	=>	'280GB',
-            ),
-        ),
     ),
     // keepfrds
     'keepfrds'      => array(
@@ -263,8 +247,8 @@ return array(
         // 如果需要自动辅种，必须配置
         'passkey'       => '',
         'limitRule' => array(
-            'count' => 50,      // 每次辅种50个
-            'sleep' => 15,      // 最少休眠15秒
+            'count' => 20,      // 每次辅种20个
+            'sleep' => 20,      // 最少休眠20秒
         ),
         'url_replace' => array(),
         'url_join' => array(),
@@ -654,6 +638,13 @@ return array(
         'passkey'       => '',
         'url_replace' => array(),
         'url_join' => array(),
+    ),
+    // dragonhd
+    'dragonhd'      => array(
+        // 如果需要用下载免费种脚本，须配置（只是自动辅种，可以不配置此项）
+        'cookie'        => '',
+        // 如果需要自动辅种，必须配置
+        'passkey'       => '',
     ),
     // 配置结束，后面的一行不能删除，必须保留！！！
 );
