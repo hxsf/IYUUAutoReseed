@@ -71,11 +71,11 @@ class qBittorrent extends AbstractClient
             '1' => null,
             '2' => '/api/v2/sync/maindata'
         ],
-        'get_all_categary' => [
+        'get_all_category' => [
             '1' => null,
             '2' => '/api/v2/categories'
         ],
-        'add_new_categary' => [
+        'add_new_category' => [
             '1' => null,
             '2' => '/api/v2/torrents/createCategory'
         ],
@@ -149,7 +149,7 @@ class qBittorrent extends AbstractClient
             'skip_checking'    =>  true,
             'paused'    =>  true,
             'root_folder'    =>  true,
-            'categary' => '',
+            'category' => '',
         )
      *  @return array
      */
@@ -316,7 +316,7 @@ class qBittorrent extends AbstractClient
         }
         return $this->addTags(array($hash), $tags);
     }
-    private function ensureCategary($hash, $categary)
+    private function ensurecategory($hash, $category)
     {
 
     }

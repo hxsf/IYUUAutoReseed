@@ -43,7 +43,7 @@ return array(
             array(
                 'type'	=>	'qBittorrent',	// 支持：transmission、qBittorrent
                 'host'	=>	'http://127.0.0.1:8083',
-                'categary' => '', // 辅种任务默认分类
+                'category' => '', // 辅种任务默认分类
                 'add_site_tag' => false,
                 'username'	=>	'admin',
                 'password'	=>	'',
